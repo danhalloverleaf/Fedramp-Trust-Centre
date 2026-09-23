@@ -1,0 +1,20 @@
+{
+    "$comment": "Satisfies CDS-TRC access-logging / inventory-of-access requirement: an inventory/history of which federal agency users or systems have accessed Overleaf's certification data, available to FedRAMP on request, retained 6+ months. STRUCTURE PLACEHOLDER - no real access events exist yet.",
+    "fedrampId": "FR2414718666",
+    "retentionPolicy": {
+          "minimumRetentionMonths": 6,
+          "notes": "TODO: confirm actual retention period with legal/compliance - 6 is the CDS-TRC floor, not necessarily the chosen policy."
+    },
+    "accessMethod": "TODO: define - API key issuance, SSO-gated download, or public+logged. CDS-TRC prefers just-in-time provisioning (CDS-TRC-USH) and agency-managed users (CDS-TRC-SSM).",
+    "accessLog": [
+          {
+                  "$comment": "Example shape of one log entry - not a real event.",
+                  "timestamp": "2026-09-23T00:00:00Z",
+                  "accessorType": "federal-agency-or-fedramp-pmo-or-third-party-assessor",
+                  "accessorIdentifier": "TODO: agency/org identifier, pseudonymized if required",
+                  "resourceAccessed": "fedramp.json-or-ksi-results.json-or-availability-status.json-or-full-certification-package",
+                  "accessGrantedVia": "TODO: e.g. API token, SSO session",
+                  "sourceIp": null
+          }
+    ]
+}
