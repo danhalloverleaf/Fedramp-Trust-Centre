@@ -1,0 +1,49 @@
+{
+    "$comment": "TODO(engineering): validate against the canonical schema at fedramp.gov before publishing. Draft based on CDS-CSO-PUB requirement list and the public Tarly reference repo, NOT a validated schema instance.",
+    "schemaVersion": "2026-06-24",
+    "fedrampId": "FR2414718666",
+    "cloudServiceOffering": {
+          "name": "Overleaf",
+          "legalEntityName": "Digital Science UK Limited",
+          "serviceModel": "SaaS",
+          "deploymentModel": "Public Cloud, multi-tenant",
+          "businessCategory": "TODO: confirm exact FedRAMP business-category taxonomy value with 3PAO or advisor",
+          "ueiNumber": "TODO: obtain from finance/legal - not publicly available on fedramp.gov marketplace listing",
+          "overallServiceDescription": "Overleaf is delivered as a SaaS offering using a multi-tenant Public Cloud cloud computing environment. Overleaf is an online collaborative writing and editing platform for scientific and technical documents. TODO: replace with full description.",
+          "productWebsiteLink": "https://www.overleaf.com/for/government",
+          "productLogoLink": "TODO: use Overleaf's own hosted logo asset"
+    },
+    "contacts": {
+          "salesContact": "TODO: name and email of designated FedRAMP sales contact",
+          "securityContact": "TODO: name and email of designated FedRAMP security contact"
+    },
+    "certificationProfile": {
+          "type": "Rev5",
+          "path": "Agency",
+          "class": "B",
+          "classLabel": "Class B (Low)",
+          "phase": "Ongoing Certification",
+          "status": "FedRAMP Certified",
+          "statusAsOf": "2025-01-29",
+          "certifiedSince": "2025-01-29",
+          "totalAuthorizations": 3,
+          "totalReuses": 2
+    },
+    "publicServiceList": [
+          {
+                  "serviceName": "TODO: enumerate each distinct public-facing service or module in scope",
+                  "securityCategory": "TODO: e.g. Low or Moderate per FIPS 199",
+                  "description": "TODO - must be specific enough that a customer can determine in or out of scope without requesting the full package (CDS-CSO-SVC)."
+          }
+    ],
+    "documentation": {
+          "secureConfigurationGuideLink": "TODO: not yet publicly published - SCG exists internally but SCG-CSO-PUB requires a public link.",
+          "documentationOverview": "TODO: short overview of what documentation package is supplied to agencies on request.",
+          "trustCenterLandingPageLink": "TODO: URL of the human-readable trust center landing page once deployed"
+    },
+    "certificationReporting": {
+          "nextOngoingCertificationReportDate": "TODO: confirm cadence and date with 3PAO",
+          "currentAssessor": "TODO: name of Overleaf's current FedRAMP-recognized 3PAO"
+    },
+    "lastUpdated": "2026-09-23"
+}
