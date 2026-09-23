@@ -1,49 +1,59 @@
 {
-    "$comment": "TODO(engineering): validate against the canonical schema at fedramp.gov before publishing. Draft based on CDS-CSO-PUB requirement list and the public Tarly reference repo, NOT a validated schema instance.",
-    "schemaVersion": "2026-06-24",
-    "fedrampId": "FR2414718666",
-    "cloudServiceOffering": {
-          "name": "Overleaf",
-          "legalEntityName": "Digital Science UK Limited",
-          "serviceModel": "SaaS",
-          "deploymentModel": "Public Cloud, multi-tenant",
-          "businessCategory": "TODO: confirm exact FedRAMP business-category taxonomy value with 3PAO or advisor",
-          "ueiNumber": "TODO: obtain from finance/legal - not publicly available on fedramp.gov marketplace listing",
-          "overallServiceDescription": "Overleaf is delivered as a SaaS offering using a multi-tenant Public Cloud cloud computing environment. Overleaf is an online collaborative writing and editing platform for scientific and technical documents. TODO: replace with full description.",
-          "productWebsiteLink": "https://www.overleaf.com/for/government",
-          "productLogoLink": "TODO: use Overleaf's own hosted logo asset"
-    },
-    "contacts": {
-          "salesContact": "TODO: name and email of designated FedRAMP sales contact",
-          "securityContact": "TODO: name and email of designated FedRAMP security contact"
-    },
-    "certificationProfile": {
-          "type": "Rev5",
-          "path": "Agency",
-          "class": "B",
-          "classLabel": "Class B (Low)",
-          "phase": "Ongoing Certification",
-          "status": "FedRAMP Certified",
-          "statusAsOf": "2025-01-29",
-          "certifiedSince": "2025-01-29",
-          "totalAuthorizations": 3,
-          "totalReuses": 2
-    },
-    "publicServiceList": [
-          {
-                  "serviceName": "TODO: enumerate each distinct public-facing service or module in scope",
-                  "securityCategory": "TODO: e.g. Low or Moderate per FIPS 199",
-                  "description": "TODO - must be specific enough that a customer can determine in or out of scope without requesting the full package (CDS-CSO-SVC)."
-          }
+  "$comment": "TODO(engineering): validate this file against the canonical schema at https://www.fedramp.gov/schemas/fedramp-certification-package-overview-schema-2026-06-24.json before publishing. Live fetch of that schema failed in this drafting session (repeated timeout) so field names/nesting below are a best-effort draft based on the CDS-CSO-PUB requirement list and the public Tarly/patrick-tarly-co reference repo, NOT a validated schema instance.",
+  "schemaVersion": "2026-06-24",
+  "fedrampId": "FR2414718666",
+  "cloudServiceOffering": {
+    "name": "Overleaf",
+    "legalEntityName": "Digital Science UK Limited",
+    "serviceModel": "SaaS",
+    "deploymentModel": "Public Cloud, multi-tenant",
+    "businessCategory": "TODO: confirm exact FedRAMP business-category taxonomy value (e.g. Collaboration / Productivity Software) with 3PAO or advisor",
+    "ueiNumber": "TODO: obtain Digital Science UK Limited's UEI from finance/legal — not publicly available on fedramp.gov marketplace listing",
+    "overallServiceDescription": "Overleaf is delivered as a SaaS offering using a multi-tenant Public Cloud cloud computing environment. Overleaf is an online collaborative writing and editing platform for scientific and technical documents. TODO: replace with full description — the source (fedramp.gov marketplace meta description) is truncated; pull the complete text from the SSP or marketplace listing page directly.",
+    "productWebsiteLink": "https://www.overleaf.com/for/government",
+    "productLogoLink": "TODO: use Overleaf's own hosted logo asset, not FedRAMP's mirrored copy (currently https://www.fedramp.gov/assets/img/logos/CSP_logos/Overleaf%20Logo.png)"
+  },
+  "contacts": {
+    "salesContact": "TODO: name + email of designated FedRAMP sales contact",
+    "securityContact": "TODO: name + email of designated FedRAMP security contact (likely security@overleaf.com or equivalent — confirm)"
+  },
+  "certificationProfile": {
+    "type": "Rev5",
+    "path": "Agency",
+    "class": "B",
+    "classLabel": "Class B (Low)",
+    "phase": "Ongoing Certification",
+    "status": "FedRAMP Certified",
+    "statusAsOf": "2025-01-29",
+    "certifiedSince": "2025-01-29",
+    "totalAuthorizations": 3,
+    "totalReuses": 2
+  },
+  "publicServiceList": [
+    {
+      "serviceName": "TODO: enumerate each distinct public-facing service/module in scope",
+      "securityCategory": "TODO: e.g. Low / Moderate per FIPS 199, plus a plain-language note on what's in vs. out of scope",
+      "description": "TODO — must be specific enough that a customer can determine in/out of scope without requesting the full package (CDS-CSO-SVC)."
+    }
+  ],
+  "documentation": {
+    "secureConfigurationGuideLink": "TODO: not yet publicly published — SCG exists internally (Drive doc, v1.0, Feb 2026) but SCG-CSO-PUB requires a public link. Publish and link here.",
+    "documentationOverview": "TODO: short overview of what documentation package is supplied to agencies on request (SSP, SCG, POA&M, pentest summary, etc.)",
+    "trustCenterLandingPageLink": "TODO: URL of the human-readable trust center landing page once deployed"
+  },
+  "certificationReporting": {
+    "nextOngoingCertificationReportDate": "TODO: confirm cadence/date with 3PAO — not derivable from public marketplace data",
+    "currentAssessor": "TODO: name of Overleaf's current FedRAMP-recognized 3PAO"
+  },
+  "lastUpdated": "2026-09-23",
+  "lastVerifiedAgainstMarketplace": "2026-09-23 — re-checked https://www.fedramp.gov/marketplace/products/FR2414718666/, no changes to any field above.",
+  "sourceNotes": {
+    "verifiedFromLiveFedrampGovMarketplaceListing": [
+      "fedrampId", "certificationProfile.type", "certificationProfile.path", "certificationProfile.class",
+      "certificationProfile.phase", "certificationProfile.status", "certificationProfile.statusAsOf",
+      "certificationProfile.certifiedSince", "certificationProfile.totalAuthorizations",
+      "cloudServiceOffering.legalEntityName", "cloudServiceOffering.productWebsiteLink"
     ],
-    "documentation": {
-          "secureConfigurationGuideLink": "TODO: not yet publicly published - SCG exists internally but SCG-CSO-PUB requires a public link.",
-          "documentationOverview": "TODO: short overview of what documentation package is supplied to agencies on request.",
-          "trustCenterLandingPageLink": "TODO: URL of the human-readable trust center landing page once deployed"
-    },
-    "certificationReporting": {
-          "nextOngoingCertificationReportDate": "TODO: confirm cadence and date with 3PAO",
-          "currentAssessor": "TODO: name of Overleaf's current FedRAMP-recognized 3PAO"
-    },
-    "lastUpdated": "2026-09-23"
+    "everythingElseIsPlaceholder": "Fields not listed above are drafted from the Overleaf FedRAMP handoff brief or marked TODO; do not publish without review."
+  }
 }
