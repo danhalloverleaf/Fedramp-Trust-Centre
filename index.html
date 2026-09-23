@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Overleaf Trust Center (starter/draft)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      :root { color-scheme: light dark; }
+      body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+      h1 { font-size: 1.5rem; }
+      .banner { background: #fff3cd; border: 1px solid #e6c66b; border-radius: 6px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
+      table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+      th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #ccc; font-size: 0.92rem; }
+      code { background: rgba(127,127,127,0.15); padding: 0.1rem 0.3rem; border-radius: 3px; }
+      .status-badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+      .status-operational { background: #d4f4dd; color: #1a6b34; }
+      .status-not-yet-evaluated { background: #e6e6e6; color: #555; }
+      section { margin-bottom: 2.5rem; }
+      a { color: #0a5ea8; }
+    </style>
+  </head>
+  <body>
+
+    <div class="banner">
+        <strong>Draft / starter repo.</strong> This page renders placeholder data (see each JSON file's $comment field). Not a live trust center.
+    </div>div>
+  
+  <h1>Overleaf Trust Center - FedRAMP Certification Data (draft)</h1>
+  <p><strong>FedRAMP ID:</strong> <code id="fedramp-id">FR2414718666</code>code></p>
+  
+  <section>
+      <h2>Certification Package Overview</h2>
+      <div id="overview-loading">Loading...</div>div>
+      <table id="overview-table" style="display:none;">
+            <tbody></tbody>
+      </table>table>
+    <p><a href="./fedramp.json">fedramp.json</a>a></p>
+  </section>
+  
+  <section>
+    <h2>Key Security Indicators</h2>
+    <p>See <a href="./KSI-STATUS.md">KSI-STATUS.md</a>a> / <a href="./ksi-results.json">ksi-results.json</a>a> for the full (placeholder) table.</p>
+    <table id="ksi-table">
+        <thead><tr><th>KSI ID</th><th>Theme</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+    </table>table>
+  </section>
+  
+  <section>
+    <h2>Availability Status (Class B requirement)</h2>
+    <p>Per <a href="./availability-status-v1.schema.json">schema</a>a> - data: <a href="./availability-status.json">availability-status.json</a>a></p>
+    <table id="availability-table">
+        <thead><tr><th>Service</th><th>Current Status</th></tr></thead>
+        <tbody></tbody>
+    </table>table>
+    <p><em>Reminder: this page must be hosted independently of primary Overleaf infrastructure once real.</em></p>
+  </section>
+  
+  <section>
+    <h2>Access Log</h2>
+    <p>See <a href="./ACCESS.md">ACCESS.md</a>a> / <a href="./ACCESS.json">ACCESS.json</a>a> - design not finalized yet.</p>
+  </section>
+  
+  <script>
+    async function loadJSON(path) {
+        const res = await fetch(path);
+        return res.json();
+    }
+
+    async function renderOverview() {
+        const data = await loadJSON('./fedramp.json');
+        const rows = [
+              ['Service model', data.cloudServiceOffering.serviceModel],
+              ['Deployment model', data.cloudServiceOffering.deploymentModel],
+              ['Certification type', data.certificationProfile.type],
+              ['Path', data.certificationProfile.path],
+              ['Class', data.certificationProfile.classLabel],
+              ['Phase', data.certificationProfile.phase],
+              ['Status', data.certificationProfile.status + ' (as of ' + data.certificationProfile.statusAsOf + ')'],
+              ['Certified since', data.certificationProfile.certifiedSince],
+              ['Authorizations', data.certificationProfile.totalAuthorizations],
+              ['Website', '<a href="' + data.cloudServiceOffering.productWebsiteLink + '">' + data.cloudServiceOffering.productWebsiteLink + '</a>']
+            ];
+        const tbody = document.querySelector('#overview-table tbody');
+        tbody.innerHTML = rows.map(r => `<tr><th>${r[0]}</th><td>${r[1]}</td></tr>`).join('');
+        document.getElementById('overview-loading').style.display = 'none';
+        document.getElementById('overview-table').style.display = '';
+    }
+
+    async function renderKSI() {
+        const data = await loadJSON('./ksi-results.json');
+        const tbody = document.querySelector('#ksi-table tbody');
+        tbody.innerHTML = data.results.map(r =>
+              `<tr><td><code>${r.ksiId}</code></td><td>${r.theme}</td><td><span class="status-badge status-${r.status}">${r.status}</span></td></tr>`
+                                             ).join('');
+    }
+
+    async function renderAvailability() {
+        const data = await loadJSON('./availability-status.json');
+        const tbody = document.querySelector('#availability-table tbody');
+        tbody.innerHTML = data.services.map(s =>
+              `<tr><td>${s.serviceName}</td><td><span class="status-badge status-${s.currentStatus}">${s.currentStatus}</span></td></tr>`
+                                              ).join('');
+    }
+
+    renderOverview().catch(e => document.getElementById('overview-loading').textContent = 'Failed to load: ' + e);
+    renderKSI().catch(console.error);
+    renderAvailability().catch(console.error);
+  </script>
+
+  </body>
+</html>html>
+  </script></em></p></tbody></th></th></tr></p></tbody></th></th></tr></thead></h2></p></tbody>
+  </section></p></h1></strong>
+  </body>
+  </style></title>
+  </head>
