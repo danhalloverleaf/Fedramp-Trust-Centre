@@ -1,0 +1,26 @@
+{
+    "$comment": "ILLUSTRATIVE STRUCTURE ONLY. Exact current KSI catalog not independently verified - confirm at fedramp.gov/2026/reference/20x/b/key-security-indicators and github.com/FedRAMP/rules before populating for real. Theme prefixes (KSI-AFR, KSI-IAM, KSI-CNA, KSI-SVC, KSI-MLA, KSI-CMT, KSI-PIY, KSI-RPL, KSI-INR, KSI-CED, KSI-TPR) are real published theme codes; individual KSI IDs and statuses below are placeholders.",
+    "catalogReference": "FedRAMP Consolidated Rules 2026 - Key Security Indicators (confirm exact version before publishing)",
+    "cloudServiceOffering": "Overleaf",
+    "fedrampId": "FR2414718666",
+    "generatedAt": "2026-09-23T00:00:00Z",
+    "generationCadence": "TODO: nightly, once a real compliance pipeline exists",
+    "results": [
+          { "ksiId": "KSI-AFR-01", "theme": "Authorization by FedRAMP", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-IAM-01", "theme": "Identity and Access Management", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-CNA-01", "theme": "Cloud Native Architecture", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-SVC-01", "theme": "Service Configuration", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-MLA-01", "theme": "Monitoring, Logging, and Auditing", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-CMT-01", "theme": "Change Management", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-PIY-01", "theme": "Policy and Inventory", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-RPL-01", "theme": "Recovery Planning", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-INR-01", "theme": "Incident Response", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-CED-01", "theme": "Cybersecurity Education", "status": "not-yet-evaluated" },
+          { "ksiId": "KSI-TPR-01", "theme": "Third-Party Resources", "status": "not-yet-evaluated" }
+    ],
+    "statusLegend": {
+          "met": "Control validated as met by automated or attested evidence",
+          "not-met": "Control evaluated and found not met",
+          "not-yet-evaluated": "Placeholder - real pipeline not yet built"
+    }
+}
