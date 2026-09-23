@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://overleaf.com/trust-center/schemas/availability-status-v1.schema.json",
+    "$comment": "Draft schema, not copied from an official FedRAMP source (none located/verified during drafting). Modeled on the Class B requirement: current + 30-day historical availability of core services, including incidents, human- and machine-readable, available even if the primary service is down. Review/replace if FedRAMP publishes an official schema for this.",
+    "title": "Overleaf Availability Status",
+    "type": "object",
+    "required": ["fedrampId", "generatedAt", "services"],
+    "properties": {
+          "fedrampId": { "type": "string", "const": "FR2414718666" },
+          "generatedAt": { "type": "string", "format": "date-time" },
+          "services": {
+                  "type": "array",
+                  "items": {
+                            "type": "object",
+                            "required": ["serviceName", "currentStatus", "history"],
+                            "properties": {
+                                        "serviceName": { "type": "string" },
+                                        "currentStatus": {
+                                                      "type": "string",
+                                                      "enum": ["operational", "degraded", "partial-outage", "major-outage", "maintenance"]
+                                        },
+                                        "history": {
+                                                      "type": "array",
+                                                      "description": "One entry per day for the trailing 30 days.",
+                                                      "items": {
+                                                                      "type": "object",
+                                                                      "required": ["date", "status"],
+                                                                      "properties": {
+                                                                                        "date": { "type": "string", "format": "date" },
+                                                                                        "status": {
+                                                                                                            "type": "string",
+                                                                                                            "enum": ["operational", "degraded", "partial-outage", "major-outage", "maintenance"]
+                                                                                          },
+                                                                                        "incidents": {
+                                                                                                            "type": "array",
+                                                                                                            "items": {
+                                                                                                                                  "type": "object",
+                                                                                                                                  "properties": {
+                                                                                                                                                          "incidentId": { "type": "string" },
+                                                                                                                                                          "summary": { "type": "string" },
+                                                                                                                                                          "startedAt": { "type": "string", "format": "date-time" },
+                                                                                                                                                          "resolvedAt": { "type": ["string", "null"], "format": "date-time" },
+                                                                                                                                                          "impact": { "type": "string", "enum": ["minor", "moderate", "major", "critical"] }
+                                                                                                                                    }
+                                                                                                              }
+                                                                                          }
+                                                                      }
+                                                      }
+                                        }
+                            }
+                  }
+          }
+    }
+}
