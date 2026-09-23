@@ -1,0 +1,19 @@
+{
+    "$comment": "Placeholder instance conforming to availability-status-v1.schema.json. Satisfies the Class B requirement for a web service showing current + 30-day historical availability, including incidents, in human- and machine-readable form, that MUST remain available even if Overleaf itself is down (needs to be hosted separately from overleaf.com infrastructure).",
+    "fedrampId": "FR2414718666",
+    "generatedAt": "2026-09-23T00:00:00Z",
+    "services": [
+          {
+                  "serviceName": "TODO: name each core service in scope (e.g. Overleaf Editor, Overleaf Git Bridge, Overleaf API)",
+                  "currentStatus": "operational",
+                  "history": [
+                            {
+                                        "date": "2026-09-23",
+                                        "status": "operational",
+                                        "incidents": []
+                            }
+                  ]
+          }
+    ],
+    "hostingNote": "TODO: this file/page must be served from infrastructure independent of the primary Overleaf service so it stays reachable during an Overleaf outage - firm Class B requirement, not optional."
+}
