@@ -1,0 +1,30 @@
+{
+  "$comment": "Summary of the most recent vulnerability scan report Dan supplied (Scan_Report_August_dgtas-hl_20260917.csv, a Qualys WAS export). Only the CSV was machine-readable in this session; the paired PDF is the same report in human-readable form. This is ONE scan of ONE target (a staging environment), not a full picture of Overleaf's scanning program — see notes below before treating this as comprehensive evidence.",
+  "reportTitle": "Scan Report August",
+  "reportGeneratedAt": "2026-09-17T09:48:00+01:00",
+  "generatedBy": "John Lees-Miller (dgtas-hl)",
+  "organization": "Digital Science",
+  "scans": [
+    {
+      "scanName": "WriteLaTeX Discovery Scan - 2015-Jan-19 Run #237",
+      "scanDate": "2026-09-06",
+      "target": "stag-overleaf.com (staging)",
+      "findings": {
+        "level5Critical": 0,
+        "level4": 0,
+        "level3": 0,
+        "level2": 0,
+        "level1": 0,
+        "sensitiveContents": 0,
+        "informationGathered": 68
+      },
+      "overallSecurityRisk": "Low",
+      "informationGatheredNote": "The 68 informational items are almost entirely expected 403/404 responses discovered while crawling (old template/gallery pages, tracking/event endpoints, a couple of legacy 'stag-' subdomain paths). No sensitive contents and no Level 1-5 vulnerabilities were reported."
+    }
+  ],
+  "caveats": [
+    "This is a 'Discovery Scan' against a staging host, not confirmed to be an authenticated, production-scope application scan — don't cite it as full coverage of KSI-MLA-04 or equivalent Rev5 vulnerability-scanning controls without checking scan configuration with the security team.",
+    "Only one scan/target is represented here. If there are other scans (production apps, infra, dependencies) in the same Qualys account or elsewhere, they aren't reflected in this trust center yet.",
+    "POA&M cross-reference not yet done: Dan supplied 'FedRAMP-POAM-August26 Overleaf.xlsx' but it's a binary spreadsheet the assistant's sandbox couldn't open in this session (shell access was down). Once available, open POA&M items should be cross-referenced against these scan findings and reflected in ksi-results.json / a dedicated poam-summary file."
+  ]
+}
